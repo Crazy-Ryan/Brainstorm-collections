@@ -32,8 +32,9 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        List<Integer> evenNumList = arrayList.stream().filter(num -> 0 == num % 2).collect(Collectors.toList());
-        return evenNumList.stream().reduce(Integer::sum).orElse(0) * 1.0 / evenNumList.size();
+//        List<Integer> evenNumList = arrayList.stream().filter(num -> 0 == num % 2).collect(Collectors.toList());
+//        return evenNumList.stream().reduce(Integer::sum).orElse(0) * 1.0 / evenNumList.size();
+        return arrayList.stream().mapToInt(num -> num).average().orElse(0);
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
